@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Letter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="Letter.css" />
+</head>
+<body>
+  <div class="fullscreen-notice" id="fullscreenNotice" role="status" aria-live="polite" aria-hidden="false">
+    <div class="fullscreen-notice__content">
+      <span class="fullscreen-notice__text">Click to fullscreen</span>
+      <button class="fullscreen-notice__button" id="fullscreenBtn" type="button">Enter Fullscreen</button>
+    </div>
+  </div>
+
+  <div class="animated-bg" aria-hidden="true">
+    <span class="heart heart-1">💙</span>
+    <span class="heart heart-2">💙</span>
+    <span class="heart heart-3">💙</span>
+    <span class="heart heart-4">💙</span>
+    <span class="heart heart-5">💙</span>
+    <span class="heart heart-6">💙</span>
+    <span class="heart heart-7">💙</span>
+    <span class="heart heart-8">💙</span>
+    <span class="heart heart-9">💙</span>
+    <span class="heart heart-10">💙</span>
+    <span class="heart heart-11">💙</span>
+    <span class="heart heart-12">💙</span>
+    <span class="heart heart-13">💙</span>
+    <span class="heart heart-14">💙</span>
+    <span class="heart heart-15">💙</span>
+  </div>
+  <main class="page-container">
+
+    <!-- FIRST PAGE - COVER -->
+    <section class="page first-page">
+      <div class="cover-content">
+        <div class="cover-badge">Special Birthday Story</div>
+        <div class="cover-decoration">🎂💖</div>
+        <h1 class="cover-title" style="color:blue;">Happy Birthday</h1>
+        <p class="cover-subtitle" style="color:rgb(2, 38, 68)">A soft little message made just for you</p>
+        <button class="cover-cta" id="openStoryBtn" type="button" style="background-color: #0550a0; color: rgb(8, 61, 175);">Open the story</button>
+        <button class="cover-cta cover-cta--secondary" id="hideStoryBtn" type="button" hidden>Hide the pages</button>
+        <p class="cover-hint">↓ Scroll to continue ↓</p>
+      </div>
+    </section>
+
+    <!-- SECOND PAGE - MEMORY GALLERY -->
+   <section class="page second-page story-page is-hidden" id="secondPage">
+      <section class="card">
+        <p class="eyebrow">Page 2</p>
+        <h1>Our Favorite Memories</h1>
+        <p class="intro">Tap each card below to reveal a little message from my heart.</p>
+
+        <section class="photo-demo" aria-label="Memory gallery">
+          <div class="photo-demo__intro">
+            <p class="eyebrow">Moments We Shared</p>
+            <h2>These are the memories I still hold close and these memories will forever be in my heart.</h2>
+          </div>
+
+          <div class="photo-demo__stage">
+            <button class="photo-card left" type="button" aria-pressed="false">
+              <video controls autoplay muted loop playsinline>
+                <source src="PhotoBooth2.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <span class="photo-card__label">First Solo Photobooth</span>
+              <span class="photo-card__message">This simple moment with you felt veryy veryy special to me and this is my first time that i felt special on someone.</span>
+            </button>
+
+            <button class="photo-card right" type="button" aria-pressed="false">
+              <img src="PictureTogether.jpg" alt="Picture together" />
+              <span class="photo-card__label">Picture Together</span>
+              <span class="photo-card__message">We make the best team, no matter what.</span>
+            </button>
+
+            <button class="photo-card left" type="button" aria-pressed="false">
+              <img src="Banana.jpg" alt="Banana photo" />
+              <span class="photo-card__label">Fun Memory</span>
+              <span class="photo-card__message">Even the silly moments became my favorite memories and this is my favorite photo of usss.</span>
+            </button>
+
+            <button class="photo-card right" type="button" aria-pressed="false">
+              <img src="Picture.jpg" alt="Sweet picture" />
+              <span class="photo-card__label">Sweet Moment</span>
+              <span class="photo-card__message">You turned simple days into beautiful ones and this is also my first time that I felt comfortable on a camera.</span>
+            </button>
+          </div>
+        </section>
+      </section>
+    </section>
+
+    <!-- THIRD PAGE - LETTER -->
+    <section class="page third-page story-page is-hidden" id="thirdPage">
+    <section class="card">
+      <p class="eyebrow">For special person in my life</p>
+      <h1>Happy Birthday!</h1>
+      <p class="intro">Click the envelope to open it, then tap the note to reveal the message inside.</p>
+
+      <section class="photo-demo" aria-label="Photo animation demo">
+        <div class="photo-demo__intro">
+          <p class="eyebrow">Our Memories</p>
+          <h2>Click each photo to reveal a message</h2>
+        </div>
+        <div class="photo-demo__stage">
+          <button class="photo-card left" type="button" aria-pressed="false">
+            <video controls autoplay muted loop playsinline>
+              <source src="Photobooth.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <span class="photo-card__label">Second Solo Photobooth</span>
+            <span class="photo-card__message">You make every ordinary day feel special.</span>    
+          </button>
+
+          <button class="photo-card right" type="button" aria-pressed="false">
+            <img src="ValentinesDate.jpg" alt="FirstDate" />
+            <span class="photo-card__label">First Date</span>
+            <span class="photo-card__message">I didn't expect that this valentines will be my happiest valentines day ever because you made it special by spending time with me.</span>
+          </button>
+        </div>
+      </section>
+
+      <div class="letter-stage" aria-live="polite">
+        <div class="envelope-container">
+          <button class="envelope-btn" id="envelopeBtn" type="button" aria-label="Open the letter">
+            <span class="flap"></span>
+            <span class="body"></span>
+            <span class="seal"> 🎂 </span>
+          </button>
+
+          <article class="letter-paper" id="letterPaper">
+          <div class="paper-inner">
+            <p class="letter-label">Dear Cendy,</p>
+            <p class="letter-text"> Hiii Babyyy Koooo, sorry if tinatawag padin kita n'yan ah nasanay lang ako haha. Soo, Happy Happy Birthdayyyyy to the prettiest and the most caring person I've ever met, I wish you a good health, more blessings and a good grades in acads. Always remember that you're a special to others and please don't stress yourself too much in acads, don't be disappointed on any grades, or any scores you will get, always be positive and just enjoy the school year. I just want to tell you that I'm willing to fix everything and make it right, I know I messed up, I know I hurt you in ways I can't fully take back. But please believe me when I say I'm not giving up on us, I still believe in what we had or what we have. I'm ready to do whatever it takes to make things right, I may not have done everything right, but I'm willing to learn, to change, and to correct all of my mistakes for you, and for us. I want to understand you better, love you better, and give you the kind of love you've always dreamed of and the kind of love you deserve. Mahal kita, sobra. And I can't just walk away without trying everything I can to fix our relationship. I love you so much, and I'm still here hoping for another chance to show that I'm willing to stay, and to change every mistakes i did. I've prepared this special letter 4 months ago and i hope you will appreciate this, this is one of the reasons kung bakit nawalan ako ng time sa'yo and i know it's my fault naman kasi hindi ko padin nagawang mag update and i understand that.</p>
+            <p class="letter-text">I’ll always have a place for you in my heart, but I can’t keep waiting for someone who’s no longer choosing me. Sa lahat ng naging parte ng buhay ko, ikaw yung taong akala ko hindi ko kailanman kakayaning bitawan. Ikaw yung greatest love na hindi ko hiniling mawala, pero eto tayo, kailangan nang magpaalam. Masakit. Sobrang sakit. Kasi kahit anong pilit kong ayusin sa isip ko, hindi ko pa rin matanggap na yung taong dati kong tahanan, magiging alaala na lang. I loved you. More than you’ll ever know. More than I was able to show. At siguro iyon ang pinakamahirap, yung mahal pa kita, pero kailangan na kitang palayain. I want to say thank you. Thank you sa lahat ng saya, sa lahat ng sakit, at sa lahat ng lessons na iniwan mo sa puso ko. You changed me. You taught me how to love deeply and how to survive even when love leaves. Hindi kita makakalimutan. Maybe not today, maybe not soon. Pero darating din yung araw na maaalala kita nang hindi na masakit. If one day you miss me, just remember, there was someone who loved you genuinely, someone who would’ve stayed, someone who chose you kahit maraming dahilan para sumuko.</p>
+            <p class="letter-text">I know I hurt you, and I know I made mistakes, but I want you to know that I'm willing to do whatever it takes to make things right. I want to be the person who makes you happy, who supports you, and who loves you unconditionally. I want to be the person who makes you feel special every day, not just on your birthday. I want to be the person who makes you feel loved and appreciated, because you deserve nothing less. I love you more than words can express, and I'm willing to prove that to you every single day.</p>
+            <p class="letter-signoff">Again, Happy Birthday!,</p>
+            <p class="letter-name">From: Alii-pot</p>
+          </div>
+          <div class="letter-actions">
+            <button class="mini-btn" id="revealBtn" type="button">Reveal a secret note</button>
+            <button class="mini-btn close-btn" id="closeBtn" type="button">Close letter</button>
+          </div>
+          <p class="secret-note" id="secretNote">Every word, every sentence, and everything on this message is from my heart and this is all the things i wanted to tell you in person. Please always remember that you're always loved, seen, and of course appreciated, I wish that you will find a better man or lover soon that can treat you 10x better than i did. But if you ever found a reason to comeback to me, you're always welcome in my heart. I deeply apologize sa lahat ng pagkukulang ako at sa pagiging walang kwentang manliligaw, Again Happy Birthday my future wife in another universe..</p>
+
+          <div class="password-modal" id="passwordModal" aria-hidden="true">
+            <div class="password-modal__card" role="dialog" aria-modal="true" aria-labelledby="passwordModalTitle">
+              <p class="password-modal__eyebrow">Private Access</p>
+              <h3 id="passwordModalTitle">Enter Password</h3> 
+              <p class="password-modal__text">Type your birthday with "-" to reveal the secret note.</p>
+              <input id="passwordInput" type="password" placeholder="Enter password" autocomplete="off" />
+              <p class="password-modal__error" id="passwordError" aria-live="polite"></p>
+              <div class="password-modal__actions">
+                <button class="mini-btn secondary" id="passwordCancel" type="button">Cancel</button>
+                <button class="mini-btn" id="passwordSubmit" type="button">Reveal</button>
+              </div>
+            </div>
+          </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    </section>
+
+    <!-- FOURTH PAGE - COVER STYLE -->
+    <section class="page fourth-page story-page is-hidden" id="fourthPage">
+      <div class="cover-content cover-content--soft">
+        <div class="cover-badge">For You</div>
+        <div class="cover-decoration">🌷💗</div>
+        <h1 class="cover-title">A little more for you</h1>
+        <p class="cover-subtitle">This is a gentle reminder that you deserve all the love and joy in the world.</p>
+        <button class="cover-cta cover-cta--secondary" id="unlockFifthBtn" type="button">Unlock the next page</button>
+        <p class="cover-hint cover-hint--alt">♡ Keep going ♡</p>
+      </div>
+
+      <div class="password-modal" id="unlockModal" aria-hidden="true">
+        <div class="password-modal__card" role="dialog" aria-modal="true" aria-labelledby="unlockModalTitle">
+          <p class="password-modal__eyebrow">Password is in the letter that i will give to you tomorrow</p>
+          <h3 id="unlockModalTitle">Enter Password</h3>
+          <p class="password-modal__text">Type the password to unlock the next page.</p>
+          <input id="unlockInput" type="password" placeholder="Enter password" autocomplete="off" />
+          <p class="password-modal__error" id="unlockError" aria-live="polite"></p>
+          <div class="password-modal__actions">
+            <button class="mini-btn secondary" id="unlockCancel" type="button">Cancel</button>
+            <button class="mini-btn" id="unlockSubmit" type="button">Unlock</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FIFTH PAGE - DIFFERENT STYLE -->
+    <section class="page fifth-page story-page is-hidden" id="fifthPage">
+      <div class="final-page-card">
+        <div class="final-page-card__header">
+          <p class="eyebrow">LastPage</p>
+          <h2>And now, one last thing</h2>
+        </div>
+        <div class="final-page-content">
+          <div class="final-page-quote">You are loved, cherished, and you are enough to everyone.</div>
+          <p class="final-page-text">Click the hearts below to reveal your friends, and love ones messages for you 💕</p>
+          <button class="final-page-hearts" id="finalHeartsBtn" type="button" aria-label="Reveal the final page">
+            <span>💖</span>
+            <span>💙</span>
+            <span>💖</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIXTH PAGE - FINAL MESSAGE -->
+    <section class="page sixth-page story-page is-hidden" id="sixthPage">
+      <div class="final-message-card">
+        <p class="eyebrow">Page 6</p>
+        <h2>From Montehermoso</h2>
+        <p class="final-message-text"> test </p>
+        <h2>From Aidel</h2>
+        <P class="final-message-text"> test </P>
+        <h2>From Alii-pot</h2>
+        <p class="final-message-text">test</p>
+        <h2>From Jhay</h2>
+        <p class="final-message-text"> test </p>
+        <h2>From Jhayvee</h2>
+        <p class="final-message-text"> test </p>
+        <h2>From Jhayvee</h2>
+        <p class="final-message-text"> test </p>  
+        <h2>From Jhayvee</h2>
+        <p class="final-message-text"> test </p>
+        <h2>From Jhayvee</h2>
+        <p class="final-message-text"> test </p>
+        <h2>From Jhayvee</h2>
+        <p class="final-message-text"> test </p>  
+        <h2>From Jhayvee</h2>
+        <p class="final-message-text"> test </p>
+        <h2>From Jhayvee</h2>
+        <p class="final-message-text"> test </p>
+        <h2>From Jhayvee</h2>
+        <p class="final-message-text"> test </p>
+        <h2>From Jhayvee</h2>
+        <p class="final-message-text"> test </p>
+        <h2>From Jhayvee</h2>
+        <p class="final-message-text"> test </p>
+        <h2>From Jhayvee</h2>
+        <p class="final-message-text"> test </p>
+        <h2>From Jhayvee</h2>
+        <p class="final-message-text"> test </p>
+      </div>  
+        <div class="final-message-hearts">💙💙💙</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="letter.js"></script>
+</body>
+</html>
